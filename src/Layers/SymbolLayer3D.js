@@ -140,6 +140,10 @@ SymbolLayer3D.prototype = {
             }
         }
 
+        // declare varariables for loop to allow successful babel transpile
+        var m;
+        var material;
+        
         for (m in this.models) {
             // TODO: Support formats other than OBJ/MTL
             const objLoader = new OBJLoader();
@@ -180,6 +184,8 @@ SymbolLayer3D.prototype = {
         }
     },
     _addOrUpdateFeatures: function(features) {
+        // declare varariables for loop to allow successful babel transpile
+        var key;
         for (key in features) {
             const f = features[key];
             const position = f.geojson.geometry.coordinates;
